@@ -58,13 +58,18 @@ export function EncabezadoHero() {
             className="h-9 w-9 shrink-0 object-contain sm:h-11 sm:w-11"
           />
 
-          <div aria-hidden="true" className="h-7 w-px shrink-0 bg-slate-300" />
-
           <img
             src={logoAxaColpatria}
-            alt="AXA Colpatria"
+            alt=""
+            aria-hidden="true"
             className="h-8 w-auto max-w-[200px] object-contain sm:h-10"
           />
+
+          <div aria-hidden="true" className="h-7 w-px shrink-0 bg-slate-300" />
+
+          <span className="text-sm font-extrabold tracking-[0.04em] text-[#0B1A59] sm:text-base">
+            AXA COLPATRIA
+          </span>
         </div>
       </div>
 
