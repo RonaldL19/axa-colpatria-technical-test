@@ -1,0 +1,33 @@
+# Dependencias y build
+node_modules/
+dist/
+dist-ssr/
+coverage/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Variables de entorno y secretos (nunca subir al repositorio)
+.env
+.env.*
+*.local
+
+# Registro interno temporal de uso de IA (fuera del repositorio y del zip)
+.ia-log.md
+
+# Sistema operativo y editores
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
