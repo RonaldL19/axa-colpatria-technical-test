@@ -327,5 +327,5 @@ Otras decisiones de revisión:
 
 ## 5. Uso de IA en las demás actividades
 
-Además de la Actividad 3, también utilicé Antigravity como apoyo supervisado en la configuración inicial del proyecto, la calculadora de prima base (Actividad 1), la maquetación compatible de `email.html` (Actividad 2), la integración tipada de `window.dataLayer` con sus pruebas (Actividad 4) y la documentación en `README.md` (Actividad 5), validando manualmente cada entregable.
+El foco principal del trabajo con IA fue la Actividad 3, documentada arriba. En el resto del proyecto (configuración inicial, calculadora base, `email.html`, integración de `window.dataLayer` y documentación) utilicé Antigravity de forma puntual como apoyo técnico y para la revisión final de funcionalidad, validaciones, accesibilidad y compilación, manteniendo siempre el control sobre las decisiones, pruebas y ajustes de cada entregable.
 

@@ -126,9 +126,9 @@ Para previsualizar el correo comercial (`email.html`), ábrelo directamente en e
 
 ## Declaración de uso de IA
 
-Se utilizó **Google Antigravity** (basado en modelos Gemini) de forma transparente y supervisada a lo largo del proyecto:
-- **Actividad 3 (obligatoria):** El comparador de planes, la lógica de recomendación, la auditoría de accesibilidad/responsive y las pruebas del comparador se construyeron con una secuencia controlada de prompts documentada en detalle en [`uso_ia.md`](./uso_ia.md), incluyendo los prompts textuales y las 6 correcciones aplicadas tras la revisión real.
-- **Actividades 1, 2, 4 y 5:** También se utilizó IA como apoyo para el scaffolding inicial (Vite/React/TS/Tailwind/Vitest), la calculadora de prima base, la maquetación compatible de `email.html`, la integración tipada de `window.dataLayer` y la redacción de esta documentación. Todo el código y los cálculos fueron verificados con pruebas automatizadas y revisión manual.
+Se utilizó **Google Antigravity** de forma transparente y controlada:
+- **Actividad 3 (obligatoria):** El comparador de planes, la lógica de recomendación, la auditoría de accesibilidad/responsive y las pruebas del comparador se construyeron con una secuencia de prompts documentada en detalle en [`uso_ia.md`](./uso_ia.md), incluyendo los prompts reales y las 6 correcciones aplicadas.
+- **Demás actividades:** Se utilizó de forma puntual como apoyo técnico y en la revisión final de funcionalidad, validaciones, accesibilidad, `email.html`, medición (`window.dataLayer`) y documentación, verificando manualmente el resultado junto con las pruebas automatizadas y el build.
 
 ---
 
