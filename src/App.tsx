@@ -3,8 +3,11 @@ import { ComparadorPlanes } from './components/ComparadorPlanes';
 import { EncabezadoHero } from './components/EncabezadoHero';
 import { FormularioVehiculo } from './components/FormularioVehiculo';
 import { FranjaBeneficios } from './components/FranjaBeneficios';
+import { registrarCotizacionCalculada } from './lib/analytics';
 import {
   calcularPrimaBase,
+  calcularPrimasPlanes,
+  obtenerRecomendacionPlan,
   validarValorComercial,
   type AntiguedadId,
 } from './lib/calculos';
@@ -38,6 +41,15 @@ export default function App() {
       setHaCalculado(false);
       return false;
     }
+
+    const primaBase = calcularPrimaBase(validacion.valor, antiguedad);
+    const primas = calcularPrimasPlanes(primaBase);
+    const recomendacion = obtenerRecomendacionPlan(necesitaReemplazo, primas);
+
+    registrarCotizacionCalculada(
+      recomendacion.planRecomendado,
+      primas[recomendacion.planRecomendado],
+    );
 
     setErrorValor(null);
     setHaCalculado(true);
