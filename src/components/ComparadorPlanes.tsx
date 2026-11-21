@@ -121,10 +121,10 @@ export function ComparadorPlanes({
                 <article
                   key={plan.id}
                   aria-labelledby={`plan-titulo-${plan.id}`}
-                  className={`relative flex flex-col rounded-2xl p-5 transition ${
+                  className={`relative flex cursor-pointer flex-col rounded-2xl p-5 transition-all duration-200 hover:-translate-y-0.5 ${
                     esRecomendado
-                      ? 'border-[1.5px] border-[#3E56C4] bg-[#F4F7FF] shadow-[0_10px_28px_-10px_rgba(15,45,156,0.18)]'
-                      : 'border border-slate-200 bg-white'
+                      ? 'border-[1.5px] border-[#3E56C4] bg-[#F4F7FF] shadow-[0_10px_28px_-10px_rgba(15,45,156,0.18)] hover:shadow-[0_14px_32px_-10px_rgba(15,45,156,0.28)]'
+                      : 'border border-slate-200 bg-white hover:border-[#8FA3E8] hover:shadow-[0_12px_26px_-12px_rgba(11,26,89,0.16)]'
                   }`}
                 >
                   <div className="flex items-start gap-3 sm:min-h-[5.5rem] xl:min-h-[4.25rem]">
