@@ -79,8 +79,27 @@
           padding-top: 6px !important;
           font-size: 22px !important;
         }
-        .mobile-badge {
-          padding-top: 12px !important;
+        .header-logo-axa {
+          width: 28px !important;
+          height: 28px !important;
+        }
+        .header-logo-swirl {
+          width: 26px !important;
+          height: 26px !important;
+        }
+        .header-logo-gap {
+          padding-right: 6px !important;
+        }
+        .header-brand-text {
+          padding-left: 7px !important;
+          font-size: 10px !important;
+          line-height: 16px !important;
+          letter-spacing: 0.2px !important;
+        }
+        .header-badge {
+          padding: 4px 8px !important;
+          font-size: 10px !important;
+          line-height: 14px !important;
         }
         .mobile-title {
           font-size: 22px !important;
@@ -195,7 +214,7 @@
                   border="0"
                 >
                   <tr>
-                    <td class="stack-col" align="left" valign="middle">
+                    <td align="left" valign="middle">
                       <!--
                         LOGOS DE CABECERA (compatible con Outlook y Gmail)
                         Nota para envío real (Salesforce / SMTP): reemplazar las rutas relativas
@@ -209,13 +228,18 @@
                         border="0"
                       >
                         <tr>
-                          <td valign="middle" style="padding-right: 10px;">
+                          <td
+                            valign="middle"
+                            class="header-logo-gap"
+                            style="padding-right: 10px;"
+                          >
                             <img
                               src="src/assets/logo-axa.png"
                               alt="AXA"
                               width="38"
                               height="38"
                               border="0"
+                              class="header-logo-axa"
                               style="
                                 display: block;
                                 width: 38px;
@@ -230,13 +254,18 @@
                               "
                             />
                           </td>
-                          <td valign="middle" style="padding-right: 12px;">
+                          <td
+                            valign="middle"
+                            class="header-logo-gap"
+                            style="padding-right: 12px;"
+                          >
                             <img
                               src="src/assets/logo-axa-colpatria.png"
                               alt=""
                               width="36"
                               height="36"
                               border="0"
+                              class="header-logo-swirl"
                               style="
                                 display: block;
                                 width: 36px;
@@ -249,6 +278,7 @@
                           </td>
                           <td
                             valign="middle"
+                            class="header-brand-text"
                             style="
                               border-left: 1px solid #9ba5c9;
                               padding-left: 12px;
@@ -259,6 +289,7 @@
                               font-style: italic;
                               letter-spacing: 0.4px;
                               color: #00008f;
+                              white-space: nowrap;
                             "
                           >
                             AXA COLPATRIA
@@ -267,17 +298,19 @@
                       </table>
                     </td>
                     <td
-                      class="stack-col mobile-badge"
                       align="right"
                       valign="middle"
                       style="
+                        padding-left: 8px;
                         font-family: Arial, Helvetica, sans-serif;
                         font-size: 12px;
                         font-weight: bold;
                         color: #17307a;
+                        white-space: nowrap;
                       "
                     >
                       <span
+                        class="header-badge"
                         style="
                           display: inline-block;
                           background-color: #e3ecfa;
@@ -286,6 +319,7 @@
                           border-radius: 6px;
                           font-size: 12px;
                           line-height: 16px;
+                          white-space: nowrap;
                         "
                       >
                         Cotizaci&oacute;n en l&iacute;nea
@@ -713,87 +747,6 @@
                     color: #0b1a59;
                   "
                 />
-              </td>
-            </tr>
-
-            <!-- Pie de página ficticio -->
-            <tr>
-              <td
-                bgcolor="#F8FAFC"
-                class="email-footer-pad"
-                style="
-                  padding: 22px 32px;
-                  background-color: #f8fafc;
-                  border-top: 1px solid #e2e8f0;
-                  text-align: center;
-                "
-              >
-                <p
-                  style="
-                    margin: 0 0 8px 0;
-                    font-family: Arial, Helvetica, sans-serif;
-                    font-size: 12px;
-                    line-height: 18px;
-                    font-weight: bold;
-                    color: #0b1a59;
-                  "
-                >
-                  Aseguradora Demo S.A. &middot; L&iacute;nea ficticia de
-                  atenci&oacute;n: 01 8000 000 000
-                </p>
-                <p
-                  style="
-                    margin: 0 0 10px 0;
-                    font-family: Arial, Helvetica, sans-serif;
-                    font-size: 12px;
-                    line-height: 18px;
-                    color: #475569;
-                  "
-                >
-                  Calle Ficticia 123 # 45-67, Bogot&aacute; D.C., Colombia.
-                  Correo enviado con fines de demostraci&oacute;n; no requiere
-                  conexi&oacute;n con Salesforce ni servicios externos.
-                </p>
-                <p
-                  style="
-                    margin: 0 0 12px 0;
-                    font-family: Arial, Helvetica, sans-serif;
-                    font-size: 11px;
-                    line-height: 17px;
-                    color: #475569;
-                  "
-                >
-                  <strong>Aviso:</strong> Valores, coberturas y datos de
-                  contacto ficticios con fines de prueba t&eacute;cnica. No
-                  representan productos ni tarifas reales de AXA Colpatria.
-                </p>
-                <p
-                  style="
-                    margin: 0;
-                    font-family: Arial, Helvetica, sans-serif;
-                    font-size: 11px;
-                    line-height: 16px;
-                    color: #475569;
-                  "
-                >
-                  <a
-                    href="https://www.ejemplo-prueba.local/preferencias"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style="color: #0f2d9c; text-decoration: underline;"
-                  >
-                    Administrar preferencias
-                  </a>
-                  &nbsp;&middot;&nbsp;
-                  <a
-                    href="https://www.ejemplo-prueba.local/politica-privacidad"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style="color: #0f2d9c; text-decoration: underline;"
-                  >
-                    Pol&iacute;tica de privacidad
-                  </a>
-                </p>
               </td>
             </tr>
           </table>
