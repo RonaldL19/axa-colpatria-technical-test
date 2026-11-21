@@ -17,9 +17,6 @@ pnpm-debug.log*
 .env.*
 *.local
 
-# Registro interno temporal de uso de IA (fuera del repositorio y del zip)
-.ia-log.md
-
 # Sistema operativo y editores
 .DS_Store
 Thumbs.db
