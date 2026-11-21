@@ -123,7 +123,6 @@
       -webkit-font-smoothing: antialiased;
     "
   >
-    <!-- Preheader oculto para vista previa en bandeja de entrada -->
     <div
       style="
         display: none;
@@ -140,7 +139,6 @@
       &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
     </div>
 
-    <!-- Contenedor general de ancho completo -->
     <table
       role="presentation"
       width="100%"
@@ -162,7 +160,6 @@
                 <td width="600" valign="top">
           <![endif]-->
 
-          <!-- Tarjeta principal del correo (máximo 600px) -->
           <table
             role="presentation"
             align="center"
@@ -181,7 +178,6 @@
               overflow: hidden;
             "
           >
-            <!-- Franja superior de marca -->
             <tr>
               <td
                 height="6"
@@ -197,7 +193,6 @@
               </td>
             </tr>
 
-            <!-- Cabecera con espacio reservado para logo -->
             <tr>
               <td
                 class="email-content-pad"
@@ -215,12 +210,7 @@
                 >
                   <tr>
                     <td align="left" valign="middle">
-                      <!--
-                        LOGOS DE CABECERA (compatible con Outlook y Gmail)
-                        Nota para envío real (Salesforce / SMTP): reemplazar las rutas relativas
-                        src/assets/... por URLs públicas HTTPS alojadas en CDN, conservando
-                        width, height explícitos y alt descriptivo.
-                      -->
+                      <!-- En envío real (Salesforce/SMTP), reemplazar rutas locales por URLs HTTPS -->
                       <table
                         role="presentation"
                         cellpadding="0"
@@ -330,7 +320,6 @@
               </td>
             </tr>
 
-            <!-- Cuerpo principal: saludo y agradecimiento -->
             <tr>
               <td
                 class="email-content-pad"
@@ -377,7 +366,6 @@
               </td>
             </tr>
 
-            <!-- Tarjeta resumen de la cotización -->
             <tr>
               <td
                 class="email-content-pad"
@@ -414,7 +402,6 @@
                         Resumen de tu cotizaci&oacute;n
                       </p>
 
-                      <!-- Fila: Producto -->
                       <table
                         role="presentation"
                         width="100%"
@@ -456,7 +443,6 @@
                         </tr>
                       </table>
 
-                      <!-- Fila: Prima estimada -->
                       <table
                         role="presentation"
                         width="100%"
@@ -516,7 +502,6 @@
               </td>
             </tr>
 
-            <!-- Botón CTA a prueba de balas (VML para Outlook + enlace inline para Gmail y demás clientes) -->
             <tr>
               <td
                 align="center"
@@ -599,7 +584,6 @@
               </td>
             </tr>
 
-            <!-- Lista breve de beneficios con tabla simple (sin flex/grid) -->
             <tr>
               <td
                 class="email-content-pad"
@@ -717,7 +701,6 @@
               </td>
             </tr>
 
-            <!-- Pie de página ficticio -->
             <tr>
               <td
                 bgcolor="#F8FAFC"
