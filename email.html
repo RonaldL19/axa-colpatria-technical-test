@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html
+  lang="es"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="x-apple-disable-message-reformatting" />
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
+    <title>Resumen de tu cotización | {{producto}}</title>
+    <!--[if mso]>
+      <noscript>
+        <xml>
+          <o:OfficeDocumentSettings>
+            <o:AllowPNG />
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+          </o:OfficeDocumentSettings>
+        </xml>
+      </noscript>
+      <style type="text/css">
+        table {
+          border-collapse: collapse;
+          mso-table-lspace: 0pt;
+          mso-table-rspace: 0pt;
+        }
+        body,
+        table,
+        td,
+        p,
+        a {
+          font-family: Arial, Helvetica, sans-serif !important;
+        }
+      </style>
+    <![endif]-->
+    <style type="text/css">
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #eef4fc;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      }
+      table,
+      td {
+        border-collapse: collapse;
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+      }
+      img {
+        border: 0;
+        height: auto;
+        line-height: 100%;
+        outline: none;
+        text-decoration: none;
+        -ms-interpolation-mode: bicubic;
+      }
+      @media only screen and (max-width: 600px) {
+        .email-outer-pad {
+          padding: 16px 10px !important;
+        }
+        .email-content-pad {
+          padding: 24px 20px !important;
+        }
+        .email-footer-pad {
+          padding: 20px !important;
+        }
+        .stack-col {
+          display: block !important;
+          width: 100% !important;
+          text-align: left !important;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+        .mobile-price {
+          padding-top: 6px !important;
+          font-size: 22px !important;
+        }
+        .mobile-badge {
+          padding-top: 12px !important;
+        }
+        .mobile-title {
+          font-size: 22px !important;
+          line-height: 28px !important;
+        }
+        .mobile-cta {
+          width: 100% !important;
+          box-sizing: border-box !important;
+        }
+      }
+    </style>
+  </head>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      width: 100% !important;
+      background-color: #eef4fc;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #1f2d4a;
+      -webkit-font-smoothing: antialiased;
+    "
+  >
+    <!-- Preheader oculto para vista previa en bandeja de entrada -->
+    <div
+      style="
+        display: none;
+        font-size: 1px;
+        line-height: 1px;
+        max-height: 0px;
+        max-width: 0px;
+        opacity: 0;
+        overflow: hidden;
+        mso-hide: all;
+      "
+    >
+      Hola {{nombre_cliente}}, aquí tienes el resumen de tu cotización para {{producto}} con prima estimada de {{prima_estimada}}.
+      &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+    </div>
+
+    <!-- Contenedor general de ancho completo -->
+    <table
+      role="presentation"
+      width="100%"
+      cellpadding="0"
+      cellspacing="0"
+      border="0"
+      bgcolor="#EEF4FC"
+      style="width: 100%; background-color: #eef4fc;"
+    >
+      <tr>
+        <td
+          align="center"
+          class="email-outer-pad"
+          style="padding: 28px 16px;"
+        >
+          <!--[if mso]>
+            <table role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+              <tr>
+                <td width="600" valign="top">
+          <![endif]-->
+
+          <!-- Tarjeta principal del correo (máximo 600px) -->
+          <table
+            role="presentation"
+            align="center"
+            width="100%"
+            cellpadding="0"
+            cellspacing="0"
+            border="0"
+            bgcolor="#FFFFFF"
+            style="
+              width: 100%;
+              max-width: 600px;
+              margin: 0 auto;
+              background-color: #ffffff;
+              border: 1px solid #d8e3f2;
+              border-radius: 12px;
+              overflow: hidden;
+            "
+          >
+            <!-- Franja superior de marca -->
+            <tr>
+              <td
+                height="6"
+                bgcolor="#0F2D9C"
+                style="
+                  height: 6px;
+                  line-height: 6px;
+                  font-size: 1px;
+                  background-color: #0f2d9c;
+                "
+              >
+                &nbsp;
+              </td>
+            </tr>
+
+            <!-- Cabecera con espacio reservado para logo -->
+            <tr>
+              <td
+                class="email-content-pad"
+                style="
+                  padding: 24px 32px 20px 32px;
+                  border-bottom: 1px solid #e6edf7;
+                "
+              >
+                <table
+                  role="presentation"
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  border="0"
+                >
+                  <tr>
+                    <td class="stack-col" align="left" valign="middle">
+                      <!--
+                        PLACEHOLDER DE LOGO (compatible con Outlook y Gmail)
+                        Al reemplazar por una imagen real alojada vía HTTPS, usar atributos width y height explícitos y alt descriptivo:
+                        <img
+                          src="https://tu-cdn-seguro.ejemplo/logo-axa-colpatria.png"
+                          alt="AXA Colpatria"
+                          width="180"
+                          height="44"
+                          border="0"
+                          style="display: block; width: 180px; height: 44px; border: 0; outline: none; text-decoration: none;"
+                        />
+                      -->
+                      <table
+                        role="presentation"
+                        cellpadding="0"
+                        cellspacing="0"
+                        border="0"
+                      >
+                        <tr>
+                          <td
+                            width="180"
+                            height="44"
+                            align="center"
+                            valign="middle"
+                            bgcolor="#F3F7FD"
+                            style="
+                              width: 180px;
+                              height: 44px;
+                              background-color: #f3f7fd;
+                              border: 2px dashed #0f2d9c;
+                              border-radius: 6px;
+                              font-family: Arial, Helvetica, sans-serif;
+                              font-size: 12px;
+                              font-weight: bold;
+                              color: #0b1a59;
+                              letter-spacing: 0.3px;
+                            "
+                          >
+                            LOGO MARCA (180 &times; 44)
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td
+                      class="stack-col mobile-badge"
+                      align="right"
+                      valign="middle"
+                      style="
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-size: 12px;
+                        font-weight: bold;
+                        color: #17307a;
+                      "
+                    >
+                      <span
+                        style="
+                          display: inline-block;
+                          background-color: #e3ecfa;
+                          color: #17307a;
+                          padding: 6px 12px;
+                          border-radius: 6px;
+                          font-size: 12px;
+                          line-height: 16px;
+                        "
+                      >
+                        Cotizaci&oacute;n en l&iacute;nea
+                      </span>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Cuerpo principal: saludo y agradecimiento -->
+            <tr>
+              <td
+                class="email-content-pad"
+                style="padding: 28px 32px 12px 32px;"
+              >
+                <h1
+                  class="mobile-title"
+                  style="
+                    margin: 0 0 14px 0;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 24px;
+                    line-height: 32px;
+                    font-weight: bold;
+                    color: #0b1a59;
+                  "
+                >
+                  Hola, {{nombre_cliente}}
+                </h1>
+                <p
+                  style="
+                    margin: 0 0 14px 0;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 15px;
+                    line-height: 24px;
+                    color: #1f2d4a;
+                  "
+                >
+                  Gracias por usar nuestra calculadora y cotizar tu seguro con
+                  nosotros. Sabemos lo importante que es cuidar tu patrimonio y
+                  moverte con tranquilidad cada d&iacute;a.
+                </p>
+                <p
+                  style="
+                    margin: 0;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 15px;
+                    line-height: 24px;
+                    color: #1f2d4a;
+                  "
+                >
+                  A continuaci&oacute;n, te compartimos el resumen de tu
+                  cotizaci&oacute;n estimada:
+                </p>
+              </td>
+            </tr>
+
+            <!-- Tarjeta resumen de la cotización -->
+            <tr>
+              <td
+                class="email-content-pad"
+                style="padding: 16px 32px 24px 32px;"
+              >
+                <table
+                  role="presentation"
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  border="0"
+                  bgcolor="#F5F8FF"
+                  style="
+                    width: 100%;
+                    background-color: #f5f8ff;
+                    border: 1px solid #c7d7f9;
+                    border-radius: 10px;
+                  "
+                >
+                  <tr>
+                    <td style="padding: 20px 22px;">
+                      <p
+                        style="
+                          margin: 0 0 14px 0;
+                          font-family: Arial, Helvetica, sans-serif;
+                          font-size: 12px;
+                          line-height: 16px;
+                          font-weight: bold;
+                          text-transform: uppercase;
+                          letter-spacing: 0.6px;
+                          color: #17307a;
+                        "
+                      >
+                        Resumen de tu cotizaci&oacute;n
+                      </p>
+
+                      <!-- Fila: Producto -->
+                      <table
+                        role="presentation"
+                        width="100%"
+                        cellpadding="0"
+                        cellspacing="0"
+                        border="0"
+                        style="border-bottom: 1px solid #dce6f9;"
+                      >
+                        <tr>
+                          <td
+                            class="stack-col"
+                            align="left"
+                            valign="middle"
+                            style="
+                              padding: 10px 0;
+                              font-family: Arial, Helvetica, sans-serif;
+                              font-size: 14px;
+                              line-height: 20px;
+                              color: #475569;
+                            "
+                          >
+                            Producto cotizado
+                          </td>
+                          <td
+                            class="stack-col"
+                            align="right"
+                            valign="middle"
+                            style="
+                              padding: 10px 0;
+                              font-family: Arial, Helvetica, sans-serif;
+                              font-size: 15px;
+                              line-height: 20px;
+                              font-weight: bold;
+                              color: #0b1a59;
+                            "
+                          >
+                            {{producto}}
+                          </td>
+                        </tr>
+                      </table>
+
+                      <!-- Fila: Prima estimada -->
+                      <table
+                        role="presentation"
+                        width="100%"
+                        cellpadding="0"
+                        cellspacing="0"
+                        border="0"
+                      >
+                        <tr>
+                          <td
+                            class="stack-col"
+                            align="left"
+                            valign="middle"
+                            style="
+                              padding: 14px 0 4px 0;
+                              font-family: Arial, Helvetica, sans-serif;
+                              font-size: 14px;
+                              line-height: 20px;
+                              color: #475569;
+                            "
+                          >
+                            Prima anual estimada
+                          </td>
+                          <td
+                            class="stack-col mobile-price"
+                            align="right"
+                            valign="middle"
+                            style="
+                              padding: 14px 0 4px 0;
+                              font-family: Arial, Helvetica, sans-serif;
+                              font-size: 22px;
+                              line-height: 28px;
+                              font-weight: bold;
+                              color: #0b1a59;
+                            "
+                          >
+                            {{prima_estimada}}
+                          </td>
+                        </tr>
+                      </table>
+
+                      <p
+                        style="
+                          margin: 12px 0 0 0;
+                          font-family: Arial, Helvetica, sans-serif;
+                          font-size: 12px;
+                          line-height: 18px;
+                          color: #475569;
+                        "
+                      >
+                        Valor estimado de referencia anual. Un asesor puede
+                        ayudarte a revisar coberturas y ajustar el plan
+                        seg&uacute;n tus necesidades.
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Botón CTA a prueba de balas (VML para Outlook + enlace inline para Gmail y demás clientes) -->
+            <tr>
+              <td
+                align="center"
+                class="email-content-pad"
+                style="padding: 4px 32px 24px 32px;"
+              >
+                <table
+                  role="presentation"
+                  align="center"
+                  cellpadding="0"
+                  cellspacing="0"
+                  border="0"
+                >
+                  <tr>
+                    <td align="center">
+                      <!--[if mso]>
+                        <v:roundrect
+                          xmlns:v="urn:schemas-microsoft-com:vml"
+                          xmlns:w="urn:schemas-microsoft-com:office:word"
+                          href="https://www.ejemplo-prueba.local/hablar-con-un-asesor"
+                          style="height: 48px; v-text-anchor: middle; width: 250px;"
+                          arcsize="17%"
+                          stroke="f"
+                          fillcolor="#0F2D9C"
+                        >
+                          <w:anchorlock />
+                          <center
+                            style="
+                              color: #ffffff;
+                              font-family: Arial, Helvetica, sans-serif;
+                              font-size: 15px;
+                              font-weight: bold;
+                            "
+                          >
+                            Hablar con un asesor
+                          </center>
+                        </v:roundrect>
+                      <![endif]-->
+                      <!--[if !mso]><!-->
+                      <a
+                        href="https://www.ejemplo-prueba.local/hablar-con-un-asesor"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="mobile-cta"
+                        style="
+                          display: inline-block;
+                          background-color: #0f2d9c;
+                          color: #ffffff;
+                          font-family: Arial, Helvetica, sans-serif;
+                          font-size: 15px;
+                          font-weight: bold;
+                          line-height: 48px;
+                          text-align: center;
+                          text-decoration: none;
+                          padding: 0 32px;
+                          border-radius: 8px;
+                          -webkit-text-size-adjust: none;
+                        "
+                      >
+                        Hablar con un asesor
+                      </a>
+                      <!--<![endif]-->
+                    </td>
+                  </tr>
+                </table>
+
+                <p
+                  style="
+                    margin: 14px 0 0 0;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 13px;
+                    line-height: 20px;
+                    color: #475569;
+                  "
+                >
+                  &iquest;Tienes preguntas sobre tu cotizaci&oacute;n? Nuestro
+                  equipo est&aacute; disponible para acompa&ntilde;arte paso a
+                  paso.
+                </p>
+              </td>
+            </tr>
+
+            <!-- Lista breve de beneficios con tabla simple (sin flex/grid) -->
+            <tr>
+              <td
+                class="email-content-pad"
+                style="
+                  padding: 18px 32px 26px 32px;
+                  border-top: 1px solid #e6edf7;
+                "
+              >
+                <p
+                  style="
+                    margin: 0 0 12px 0;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 14px;
+                    line-height: 20px;
+                    font-weight: bold;
+                    color: #0b1a59;
+                  "
+                >
+                  Con tu seguro cuentas con:
+                </p>
+                <table
+                  role="presentation"
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  border="0"
+                >
+                  <tr>
+                    <td
+                      width="22"
+                      valign="top"
+                      style="
+                        padding: 4px 0;
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-size: 14px;
+                        line-height: 20px;
+                        font-weight: bold;
+                        color: #15803d;
+                      "
+                    >
+                      &#10003;
+                    </td>
+                    <td
+                      valign="top"
+                      style="
+                        padding: 4px 0;
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-size: 14px;
+                        line-height: 20px;
+                        color: #1f2d4a;
+                      "
+                    >
+                      Asistencia en carretera 24/7 en todo el pa&iacute;s.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      width="22"
+                      valign="top"
+                      style="
+                        padding: 4px 0;
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-size: 14px;
+                        line-height: 20px;
+                        font-weight: bold;
+                        color: #15803d;
+                      "
+                    >
+                      &#10003;
+                    </td>
+                    <td
+                      valign="top"
+                      style="
+                        padding: 4px 0;
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-size: 14px;
+                        line-height: 20px;
+                        color: #1f2d4a;
+                      "
+                    >
+                      Respaldo de una compa&ntilde;&iacute;a l&iacute;der en
+                      seguros.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      width="22"
+                      valign="top"
+                      style="
+                        padding: 4px 0;
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-size: 14px;
+                        line-height: 20px;
+                        font-weight: bold;
+                        color: #15803d;
+                      "
+                    >
+                      &#10003;
+                    </td>
+                    <td
+                      valign="top"
+                      style="
+                        padding: 4px 0;
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-size: 14px;
+                        line-height: 20px;
+                        color: #1f2d4a;
+                      "
+                    >
+                      Acompa&ntilde;amiento personalizado durante toda la
+                      vigencia.
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Pie de página ficticio -->
+            <tr>
+              <td
+                bgcolor="#F8FAFC"
+                class="email-footer-pad"
+                style="
+                  padding: 22px 32px;
+                  background-color: #f8fafc;
+                  border-top: 1px solid #e2e8f0;
+                  text-align: center;
+                "
+              >
+                <p
+                  style="
+                    margin: 0 0 8px 0;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 12px;
+                    line-height: 18px;
+                    font-weight: bold;
+                    color: #0b1a59;
+                  "
+                >
+                  Aseguradora Demo S.A. &middot; L&iacute;nea ficticia de
+                  atenci&oacute;n: 01 8000 000 000
+                </p>
+                <p
+                  style="
+                    margin: 0 0 10px 0;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 12px;
+                    line-height: 18px;
+                    color: #475569;
+                  "
+                >
+                  Calle Ficticia 123 # 45-67, Bogot&aacute; D.C., Colombia.
+                  Correo enviado con fines de demostraci&oacute;n; no requiere
+                  conexi&oacute;n con Salesforce ni servicios externos.
+                </p>
+                <p
+                  style="
+                    margin: 0 0 12px 0;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 11px;
+                    line-height: 17px;
+                    color: #475569;
+                  "
+                >
+                  <strong>Aviso:</strong> Valores, coberturas y datos de
+                  contacto ficticios con fines de prueba t&eacute;cnica. No
+                  representan productos ni tarifas reales de AXA Colpatria.
+                </p>
+                <p
+                  style="
+                    margin: 0;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 11px;
+                    line-height: 16px;
+                    color: #475569;
+                  "
+                >
+                  <a
+                    href="https://www.ejemplo-prueba.local/preferencias"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style="color: #0f2d9c; text-decoration: underline;"
+                  >
+                    Administrar preferencias
+                  </a>
+                  &nbsp;&middot;&nbsp;
+                  <a
+                    href="https://www.ejemplo-prueba.local/politica-privacidad"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style="color: #0f2d9c; text-decoration: underline;"
+                  >
+                    Pol&iacute;tica de privacidad
+                  </a>
+                </p>
+              </td>
+            </tr>
+          </table>
+
+          <!--[if mso]>
+                </td>
+              </tr>
+            </table>
+          <![endif]-->
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
