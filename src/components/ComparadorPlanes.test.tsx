@@ -40,8 +40,8 @@ describe('ComparadorPlanes', () => {
 
     expect(html).toContain('2. Compara nuestras coberturas');
     expect(tarjetaPlus).toContain('Recomendado');
-    expect(tarjetaPlus).toContain('border-[#3E56C4]');
-    expect(tarjetaPlus).toContain('bg-[#F4F7FF]');
+    expect(tarjetaPlus).toContain('border-[#6875EB]');
+    expect(tarjetaPlus).toContain('bg-[#F5F6FF]');
     expect(tarjetaEsencial).not.toContain('Recomendado');
     expect(tarjetaEsencial).toContain('border-slate-200 bg-white');
 
@@ -74,8 +74,8 @@ describe('ComparadorPlanes', () => {
     const tarjetaPlus = extraerTarjetaPlan(html, 'plus');
 
     expect(tarjetaEsencial).toContain('Recomendado');
-    expect(tarjetaEsencial).toContain('border-[#3E56C4]');
-    expect(tarjetaEsencial).toContain('bg-[#F4F7FF]');
+    expect(tarjetaEsencial).toContain('border-[#6875EB]');
+    expect(tarjetaEsencial).toContain('bg-[#F5F6FF]');
     expect(tarjetaPlus).not.toContain('Recomendado');
     expect(tarjetaPlus).toContain('border-slate-200 bg-white');
 

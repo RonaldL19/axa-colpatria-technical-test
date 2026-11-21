@@ -123,8 +123,8 @@ export function ComparadorPlanes({
                   aria-labelledby={`plan-titulo-${plan.id}`}
                   className={`relative flex cursor-pointer flex-col rounded-2xl p-5 transition-all duration-200 hover:-translate-y-0.5 ${
                     esRecomendado
-                      ? 'border-[1.5px] border-[#3E56C4] bg-[#F4F7FF] shadow-[0_10px_28px_-10px_rgba(15,45,156,0.18)] hover:shadow-[0_14px_32px_-10px_rgba(15,45,156,0.28)]'
-                      : 'border border-slate-200 bg-white hover:border-[#8FA3E8] hover:shadow-[0_12px_26px_-12px_rgba(11,26,89,0.16)]'
+                      ? 'border-[1.5px] border-[#6875EB] bg-[#F5F6FF] shadow-[0_10px_28px_-10px_rgba(86,100,230,0.20)] hover:shadow-[0_14px_32px_-10px_rgba(86,100,230,0.30)]'
+                      : 'border border-slate-200 bg-white hover:border-[#9CA6F0] hover:shadow-[0_12px_26px_-12px_rgba(11,26,89,0.16)]'
                   }`}
                 >
                   <div className="flex items-start gap-3 sm:min-h-[5.5rem] xl:min-h-[4.25rem]">
@@ -137,7 +137,7 @@ export function ComparadorPlanes({
                         {plan.nombre}
                       </h3>
                       {esRecomendado && (
-                        <span className="absolute -top-3 right-4 inline-flex items-center rounded-full bg-[#3E56C4] px-3.5 py-0.5 text-xs font-semibold tracking-wide text-white shadow-sm">
+                        <span className="absolute -top-3 right-4 inline-flex items-center rounded-full bg-[#5664E6] px-3.5 py-0.5 text-xs font-semibold tracking-wide text-white shadow-sm">
                           Recomendado
                         </span>
                       )}
@@ -217,7 +217,7 @@ export function ComparadorPlanes({
 
           <aside
             aria-label="Diferencia anual y recomendación"
-            className="mt-5 flex items-center gap-3.5 rounded-xl bg-[#EEF2FC] px-4 py-3.5"
+            className="mt-5 flex items-center gap-3.5 rounded-xl bg-[#F0F1FE] px-4 py-3.5"
           >
             <span
               aria-hidden="true"
