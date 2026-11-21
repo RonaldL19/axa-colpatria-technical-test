@@ -1,8 +1,70 @@
 export const VALOR_MINIMO = 20_000_000;
 export const VALOR_MAXIMO = 300_000_000;
 export const TASA_BASE = 0.03;
+export const MULTIPLICADOR_ESENCIAL = 1.0;
+export const MULTIPLICADOR_PLUS = 1.35;
 
 export type AntiguedadId = '0-2' | '3-5' | '6-10' | 'mas-10';
+
+export const COBERTURAS_CATALOGO = [
+  'Asistencia en carretera',
+  'Vehículo de reemplazo',
+  'Asistencia jurídica',
+] as const;
+
+export type Cobertura = (typeof COBERTURAS_CATALOGO)[number];
+
+export type PlanId = 'esencial' | 'plus';
+
+export interface DefinicionPlan {
+  id: PlanId;
+  nombre: string;
+  descripcion: string;
+  multiplicador: number;
+  coberturas: readonly Cobertura[];
+}
+
+export interface PrimasPlanes {
+  esencial: number;
+  plus: number;
+}
+
+export interface ResultadoRecomendacion {
+  planRecomendado: PlanId;
+  diferenciaAnual: number;
+  motivo: string;
+}
+
+export const PLANES: readonly DefinicionPlan[] = [
+  {
+    id: 'esencial',
+    nombre: 'Plan Esencial',
+    descripcion: 'Protección básica para tu vehículo',
+    multiplicador: MULTIPLICADOR_ESENCIAL,
+    coberturas: ['Asistencia en carretera'],
+  },
+  {
+    id: 'plus',
+    nombre: 'Plan Plus',
+    descripcion: 'Mayor cobertura y respaldo en todo momento',
+    multiplicador: MULTIPLICADOR_PLUS,
+    coberturas: [
+      'Asistencia en carretera',
+      'Vehículo de reemplazo',
+      'Asistencia jurídica',
+    ],
+  },
+] as const;
+
+export const PLANES_POR_ID: Record<PlanId, DefinicionPlan> = {
+  esencial: PLANES[0],
+  plus: PLANES[1],
+};
+
+export const MOTIVOS_RECOMENDACION: Record<PlanId, string> = {
+  plus: 'Te recomendamos el Plan Plus porque indicaste que necesitas vehículo de reemplazo.',
+  esencial: 'Te recomendamos el Plan Esencial por ser la opción de menor precio.',
+};
 
 export interface OpcionAntiguedad {
   id: AntiguedadId;
@@ -167,4 +229,47 @@ export function obtenerOpcionAntiguedad(id: AntiguedadId): OpcionAntiguedad {
     throw new Error(`Antigüedad no reconocida: ${id}`);
   }
   return opcion;
+}
+
+/**
+ * Calcula las primas anuales del Plan Esencial (prima base × 1,00) y del
+ * Plan Plus (prima base × 1,35), redondeando cada prima al peso con Math.round.
+ */
+export function calcularPrimasPlanes(primaBase: number): PrimasPlanes {
+  if (!Number.isFinite(primaBase) || primaBase < 0) {
+    throw new Error(
+      'La prima base debe ser un número finito mayor o igual a cero.',
+    );
+  }
+
+  return {
+    esencial: Math.round(primaBase * MULTIPLICADOR_ESENCIAL),
+    plus: Math.round(primaBase * MULTIPLICADOR_PLUS),
+  };
+}
+
+/**
+ * Calcula la diferencia anual entre Plan Plus y Plan Esencial (Plus − Esencial)
+ * utilizando las primas ya redondeadas al peso.
+ */
+export function calcularDiferenciaAnual(primas: PrimasPlanes): number {
+  return primas.plus - primas.esencial;
+}
+
+/**
+ * Determina el plan recomendado, la diferencia anual (Plus − Esencial) usando
+ * las primas ya redondeadas y el texto de recomendación.
+ */
+export function obtenerRecomendacionPlan(
+  necesitaReemplazo: boolean,
+  primas: PrimasPlanes,
+): ResultadoRecomendacion {
+  const planRecomendado: PlanId = necesitaReemplazo ? 'plus' : 'esencial';
+  const diferenciaAnual = calcularDiferenciaAnual(primas);
+
+  return {
+    planRecomendado,
+    diferenciaAnual,
+    motivo: MOTIVOS_RECOMENDACION[planRecomendado],
+  };
 }

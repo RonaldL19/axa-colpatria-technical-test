@@ -1,1 +1,16 @@
 @import "tailwindcss";
+
+.select-sin-flecha {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  background-image: none !important;
+}
+
+.select-sin-flecha::picker-icon {
+  display: none;
+}
+
+.select-sin-flecha::-ms-expand {
+  display: none;
+}

@@ -89,7 +89,7 @@ export function FormularioVehiculo({
               onChange={handleValorChange}
               aria-invalid={errorValor ? 'true' : 'false'}
               aria-describedby={describedByIds}
-              className={`w-full rounded-xl border bg-[#F8FAFC] py-3 pr-4 pl-8 text-base font-medium text-slate-900 placeholder:text-slate-400 transition focus:bg-white focus:outline-none focus:ring-2 ${
+              className={`w-full rounded-xl border bg-[#F8FAFC] py-3 pr-4 pl-8 text-base font-medium text-slate-900 placeholder:text-slate-500 transition focus:bg-white focus:outline-none focus:ring-2 ${
                 errorValor
                   ? 'border-red-600 focus:border-red-600 focus:ring-red-200'
                   : 'border-slate-300 focus:border-[#0F2D9C] focus:ring-[#0F2D9C]/20'
@@ -97,7 +97,7 @@ export function FormularioVehiculo({
             />
           </div>
 
-          <p id="valor-comercial-ayuda" className="mt-1.5 text-xs text-slate-500">
+          <p id="valor-comercial-ayuda" className="mt-1.5 text-xs text-slate-600">
             Ingresa un valor en COP entre {formatearMonedaCOP(VALOR_MINIMO)} y{' '}
             {formatearMonedaCOP(VALOR_MAXIMO)}.
           </p>
@@ -131,7 +131,12 @@ export function FormularioVehiculo({
               onChange={(event) =>
                 onAntiguedadChange(event.target.value as AntiguedadId)
               }
-              className="w-full appearance-none [-webkit-appearance:none] [-moz-appearance:none] rounded-xl border border-slate-300 bg-[#F8FAFC] py-3 pr-10 pl-3.5 text-base font-medium text-slate-900 transition focus:border-[#0F2D9C] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0F2D9C]/20"
+              className="select-sin-flecha w-full rounded-xl border border-slate-300 bg-[#F8FAFC] py-3 pr-10 pl-3.5 text-base font-medium text-slate-900 transition focus:border-[#0F2D9C] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0F2D9C]/20"
+              style={{
+                appearance: 'none',
+                WebkitAppearance: 'none',
+                MozAppearance: 'none',
+              }}
             >
               {OPCIONES_ANTIGUEDAD.map((opcion) => (
                 <option key={opcion.id} value={opcion.id}>
@@ -143,7 +148,7 @@ export function FormularioVehiculo({
               aria-hidden="true"
               viewBox="0 0 20 20"
               fill="currentColor"
-              className="pointer-events-none absolute top-1/2 right-3.5 h-5 w-5 -translate-y-1/2 text-slate-500"
+              className="pointer-events-none absolute top-1/2 right-3.5 h-5 w-5 -translate-y-1/2 text-slate-600"
             >
               <path
                 fillRule="evenodd"
@@ -153,7 +158,7 @@ export function FormularioVehiculo({
             </svg>
           </div>
 
-          <p id="antiguedad-ayuda" className="mt-1.5 text-xs text-slate-500">
+          <p id="antiguedad-ayuda" className="mt-1.5 text-xs text-slate-600">
             Ajusta la prima base según el rango de años del vehículo.
           </p>
         </div>

@@ -1,11 +1,8 @@
 import { useState } from 'react';
+import { ComparadorPlanes } from './components/ComparadorPlanes';
 import { EncabezadoHero } from './components/EncabezadoHero';
 import { FormularioVehiculo } from './components/FormularioVehiculo';
 import { FranjaBeneficios } from './components/FranjaBeneficios';
-import {
-  ResumenPrimaBase,
-  type ResultadoPrimaBase,
-} from './components/ResumenPrimaBase';
 import {
   calcularPrimaBase,
   validarValorComercial,
@@ -17,11 +14,17 @@ export default function App() {
   const [antiguedad, setAntiguedad] = useState<AntiguedadId>('3-5');
   const [necesitaReemplazo, setNecesitaReemplazo] = useState<boolean>(false);
   const [errorValor, setErrorValor] = useState<string | null>(null);
-  const [resultado, setResultado] = useState<ResultadoPrimaBase | null>(null);
+  const [haCalculado, setHaCalculado] = useState<boolean>(false);
+
+  const validacionActual = validarValorComercial(valorInput);
+  const primaBaseCalculada =
+    haCalculado && validacionActual.valido
+      ? calcularPrimaBase(validacionActual.valor, antiguedad)
+      : null;
 
   const handleValorChange = (nuevoValorFormateado: string) => {
     setValorInput(nuevoValorFormateado);
-    if (errorValor !== null) {
+    if (errorValor !== null || haCalculado) {
       const validacion = validarValorComercial(nuevoValorFormateado);
       setErrorValor(validacion.valido ? null : validacion.mensaje);
     }
@@ -32,18 +35,12 @@ export default function App() {
 
     if (!validacion.valido) {
       setErrorValor(validacion.mensaje);
-      setResultado(null);
+      setHaCalculado(false);
       return false;
     }
 
-    const primaBase = calcularPrimaBase(validacion.valor, antiguedad);
     setErrorValor(null);
-    setResultado({
-      valorComercial: validacion.valor,
-      antiguedad,
-      necesitaReemplazo,
-      primaBase,
-    });
+    setHaCalculado(true);
     return true;
   };
 
@@ -67,7 +64,10 @@ export default function App() {
           </div>
 
           <div className="lg:col-span-7">
-            <ResumenPrimaBase resultado={resultado} />
+            <ComparadorPlanes
+              primaBase={primaBaseCalculada}
+              necesitaReemplazo={necesitaReemplazo}
+            />
           </div>
         </div>
       </main>
