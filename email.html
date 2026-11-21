@@ -197,16 +197,10 @@
                   <tr>
                     <td class="stack-col" align="left" valign="middle">
                       <!--
-                        PLACEHOLDER DE LOGO (compatible con Outlook y Gmail)
-                        Al reemplazar por una imagen real alojada vía HTTPS, usar atributos width y height explícitos y alt descriptivo:
-                        <img
-                          src="https://tu-cdn-seguro.ejemplo/logo-axa-colpatria.png"
-                          alt="AXA Colpatria"
-                          width="180"
-                          height="44"
-                          border="0"
-                          style="display: block; width: 180px; height: 44px; border: 0; outline: none; text-decoration: none;"
-                        />
+                        LOGOS DE CABECERA (compatible con Outlook y Gmail)
+                        Nota para envío real (Salesforce / SMTP): reemplazar las rutas relativas
+                        src/assets/... por URLs públicas HTTPS alojadas en CDN, conservando
+                        width, height explícitos y alt descriptivo.
                       -->
                       <table
                         role="presentation"
@@ -215,26 +209,67 @@
                         border="0"
                       >
                         <tr>
+                          <td valign="middle" style="padding-right: 10px;">
+                            <img
+                              src="src/assets/logo-axa.png"
+                              alt="AXA"
+                              width="40"
+                              height="40"
+                              border="0"
+                              style="
+                                display: block;
+                                width: 40px;
+                                height: 40px;
+                                border: 0;
+                                outline: none;
+                                text-decoration: none;
+                                font-family: Arial, Helvetica, sans-serif;
+                                font-size: 12px;
+                                font-weight: bold;
+                                color: #0b1a59;
+                              "
+                            />
+                          </td>
                           <td
-                            width="180"
-                            height="44"
-                            align="center"
                             valign="middle"
-                            bgcolor="#F3F7FD"
                             style="
-                              width: 180px;
-                              height: 44px;
-                              background-color: #f3f7fd;
-                              border: 2px dashed #0f2d9c;
-                              border-radius: 6px;
-                              font-family: Arial, Helvetica, sans-serif;
-                              font-size: 12px;
-                              font-weight: bold;
-                              color: #0b1a59;
-                              letter-spacing: 0.3px;
+                              border-left: 1px solid #cbd5e1;
+                              padding-left: 10px;
+                              padding-right: 8px;
                             "
                           >
-                            LOGO MARCA (180 &times; 44)
+                            <img
+                              src="src/assets/logo-axa-colpatria.png"
+                              alt="AXA Colpatria"
+                              width="40"
+                              height="40"
+                              border="0"
+                              style="
+                                display: block;
+                                width: 40px;
+                                height: 40px;
+                                border: 0;
+                                outline: none;
+                                text-decoration: none;
+                                font-family: Arial, Helvetica, sans-serif;
+                                font-size: 12px;
+                                font-weight: bold;
+                                color: #0b1a59;
+                              "
+                            />
+                          </td>
+                          <td
+                            valign="middle"
+                            style="
+                              font-family: Arial, Helvetica, sans-serif;
+                              font-size: 13px;
+                              line-height: 16px;
+                              font-weight: bold;
+                              letter-spacing: 0.4px;
+                              color: #0b1a59;
+                            "
+                          >
+                            AXA COLPATRIA
                           </td>
                         </tr>
                       </table>
@@ -653,6 +688,39 @@
                     </td>
                   </tr>
                 </table>
+              </td>
+            </tr>
+
+            <!-- Banner visual de cierre (600 × 112 px, fluido en móvil) -->
+            <tr>
+              <td
+                align="center"
+                style="padding: 0; font-size: 0; line-height: 0;"
+              >
+                <!--
+                  Nota para envío real (Salesforce / SMTP): reemplazar src/assets/footer.png
+                  por la URL pública HTTPS del banner alojado en CDN.
+                -->
+                <img
+                  src="src/assets/footer.png"
+                  alt="Visita www.axacolpatria.co y s&iacute;guenos en redes sociales"
+                  width="600"
+                  height="112"
+                  border="0"
+                  style="
+                    display: block;
+                    width: 100%;
+                    max-width: 600px;
+                    height: auto;
+                    border: 0;
+                    outline: none;
+                    text-decoration: none;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 13px;
+                    line-height: 20px;
+                    color: #0b1a59;
+                  "
+                />
               </td>
             </tr>
 
