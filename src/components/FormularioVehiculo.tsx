@@ -1,4 +1,10 @@
-import { useRef, type ChangeEvent, type FormEvent } from 'react';
+import {
+  useEffect,
+  useRef,
+  useState,
+  type ChangeEvent,
+  type FormEvent,
+} from 'react';
 import {
   OPCIONES_ANTIGUEDAD,
   VALOR_MAXIMO,
@@ -7,6 +13,81 @@ import {
   formatearMonedaCOP,
   type AntiguedadId,
 } from '../lib/calculos';
+
+interface TooltipInfoProps {
+  id: string;
+  etiquetaAria: string;
+  texto: string;
+}
+
+function TooltipInfo({ id, etiquetaAria, texto }: TooltipInfoProps) {
+  const [abierto, setAbierto] = useState(false);
+  const contenedorRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!abierto) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setAbierto(false);
+      }
+    };
+
+    const handlePointerDown = (event: PointerEvent) => {
+      if (
+        contenedorRef.current &&
+        !contenedorRef.current.contains(event.target as Node)
+      ) {
+        setAbierto(false);
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('pointerdown', handlePointerDown);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('pointerdown', handlePointerDown);
+    };
+  }, [abierto]);
+
+  return (
+    <div
+      ref={contenedorRef}
+      className="inline-flex items-center"
+      onMouseEnter={() => setAbierto(true)}
+      onMouseLeave={() => setAbierto(false)}
+    >
+      <button
+        type="button"
+        aria-label={etiquetaAria}
+        aria-expanded={abierto}
+        aria-controls={id}
+        onClick={() => setAbierto((prev) => !prev)}
+        onFocus={() => setAbierto(true)}
+        onBlur={(event) => {
+          if (!contenedorRef.current?.contains(event.relatedTarget as Node)) {
+            setAbierto(false);
+          }
+        }}
+        className="inline-flex h-[18px] w-[18px] cursor-pointer items-center justify-center rounded-full border border-slate-500 text-[11px] font-semibold leading-none text-slate-600 transition hover:border-[#0F2D9C] hover:text-[#0F2D9C] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0F2D9C]"
+      >
+        <span aria-hidden="true">i</span>
+      </button>
+
+      <span
+        id={id}
+        role="tooltip"
+        className={
+          abierto
+            ? 'pointer-events-none absolute bottom-full left-0 z-20 mb-2 w-64 max-w-full rounded-lg bg-[#0B1A59] px-3 py-2 text-xs leading-relaxed font-normal text-white shadow-lg'
+            : 'sr-only'
+        }
+      >
+        {texto}
+      </span>
+    </div>
+  );
+}
 
 export interface FormularioVehiculoProps {
   valorInput: string;
@@ -63,12 +144,19 @@ export function FormularioVehiculo({
       <form onSubmit={handleFormSubmit} noValidate className="mt-6 space-y-5">
         {/* Campo: Valor comercial */}
         <div>
-          <label
-            htmlFor="valor-comercial"
-            className="block text-sm font-semibold text-slate-800"
-          >
-            Valor comercial del vehículo
-          </label>
+          <div className="relative flex items-center gap-1.5">
+            <label
+              htmlFor="valor-comercial"
+              className="text-sm font-semibold text-slate-800"
+            >
+              Valor comercial del vehículo
+            </label>
+            <TooltipInfo
+              id="valor-comercial-ayuda"
+              etiquetaAria="Información sobre el valor comercial del vehículo"
+              texto={`Ingresa un valor en COP entre ${formatearMonedaCOP(VALOR_MINIMO)} y ${formatearMonedaCOP(VALOR_MAXIMO)}.`}
+            />
+          </div>
 
           <div className="relative mt-2">
             <span
@@ -97,11 +185,6 @@ export function FormularioVehiculo({
             />
           </div>
 
-          <p id="valor-comercial-ayuda" className="mt-1.5 text-xs text-slate-600">
-            Ingresa un valor en COP entre {formatearMonedaCOP(VALOR_MINIMO)} y{' '}
-            {formatearMonedaCOP(VALOR_MAXIMO)}.
-          </p>
-
           {errorValor && (
             <p
               id="valor-comercial-error"
@@ -115,12 +198,19 @@ export function FormularioVehiculo({
 
         {/* Selector: Antigüedad del vehículo */}
         <div>
-          <label
-            htmlFor="antiguedad-vehiculo"
-            className="block text-sm font-semibold text-slate-800"
-          >
-            Antigüedad del vehículo
-          </label>
+          <div className="relative flex items-center gap-1.5">
+            <label
+              htmlFor="antiguedad-vehiculo"
+              className="text-sm font-semibold text-slate-800"
+            >
+              Antigüedad del vehículo
+            </label>
+            <TooltipInfo
+              id="antiguedad-ayuda"
+              etiquetaAria="Información sobre la antigüedad del vehículo"
+              texto="Ajusta la prima base según el rango de años del vehículo."
+            />
+          </div>
 
           <div className="relative mt-2">
             <select
@@ -157,10 +247,6 @@ export function FormularioVehiculo({
               />
             </svg>
           </div>
-
-          <p id="antiguedad-ayuda" className="mt-1.5 text-xs text-slate-600">
-            Ajusta la prima base según el rango de años del vehículo.
-          </p>
         </div>
 
         {/* Casilla: Vehículo de reemplazo */}
