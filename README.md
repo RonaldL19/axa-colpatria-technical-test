@@ -71,7 +71,7 @@ Para previsualizar el correo comercial (`email.html`), ábrelo directamente en e
 - **Formato de moneda:** Todos los montos se muestran con `Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 })`.
 - **Regla de recomendación:** Si está marcada la casilla *"Necesito vehículo de reemplazo en caso de siniestro"*, se recomienda **Plan Plus**; de lo contrario, se recomienda **Plan Esencial** por menor precio.
 - **Disparo de analítica (`producto = 'seguro_autos'`):** El evento `cotizacion_calculada` se envía a `window.dataLayer` **únicamente** cuando el usuario confirma un cálculo válido con el botón *"Calcular y comparar planes"*, evitando disparos duplicados al teclear o con errores de validación, y excluyendo cualquier dato personal o el valor comercial del vehículo.
-- **Correo comercial independiente:** `email.html` usa tablas (`role="presentation"`), estilos inline, botón VML (`v:roundrect`) para Outlook, preheader oculto, las variables `{{nombre_cliente}}`, `{{producto}}` y `{{prima_estimada}}`, y las imágenes locales de cabecera y cierre (`src/assets/logo-axa.png`, `src/assets/logo-axa-colpatria.png` y `src/assets/footer.png`) con atributos `width`, `height` y `alt` explícitos listos para apuntar a URLs HTTPS públicas en un envío real.
+- **Correo comercial independiente:** `email.html` usa tablas (`role="presentation"`), estilos inline, botón VML (`v:roundrect`) para Outlook, preheader oculto, pie de página ficticio, las variables `{{nombre_cliente}}`, `{{producto}}` y `{{prima_estimada}}`, y los logos locales en cabecera (`src/assets/logo-axa.png` y `src/assets/logo-axa-colpatria.png`) con atributos `width`, `height` y `alt` explícitos listos para apuntar a URLs HTTPS públicas en un envío real.
 
 ---
 
@@ -134,7 +134,7 @@ Se utilizó **Google Antigravity** (basado en modelos Gemini) de forma transpare
 
 ## Pendientes
 
-- **Correo `email.html` en clientes reales:** Reemplazar las rutas locales (`src/assets/...`) de los logos y el banner `footer.png` por URLs públicas HTTPS alojadas en CDN y ejecutar pruebas visuales en clientes reales de Outlook (motor Word) y Gmail mediante **Litmus** o **Email on Acid**.
+- **Correo `email.html` en clientes reales:** Reemplazar las rutas locales (`src/assets/...`) de los logos en cabecera por URLs públicas HTTPS alojadas en CDN y ejecutar pruebas visuales en clientes reales de Outlook (motor Word) y Gmail mediante **Litmus** o **Email on Acid**.
 - **Conexión productiva de analítica:** Vincular el contenedor real de Google Tag Manager en `index.html` (o en el portal contenedor) y configurar el trigger/etiqueta GA4 en el ambiente correspondiente.
 - **Empaquetado final para Liferay:** Si se despliega en Liferay DXP, añadir el wrapper de Custom Element (`customElements.define`) y el descriptor `client-extension.yaml`.
 - **Optimización de imagen hero:** Convertir `src/assets/vehiculo.png` (~622 KB) a formato WebP/AVIF y dimensiones exactas de despliegue para reducir el peso inicial de carga.
