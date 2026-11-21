@@ -17,10 +17,7 @@ declare global {
   }
 }
 
-/**
- * Construye el payload exacto del evento `cotizacion_calculada`.
- * No incluye datos personales ni el valor comercial del vehículo.
- */
+// Solo se envían los 4 campos requeridos, sin datos personales ni valor comercial
 export function construirEventoCotizacion(
   planSeleccionado: PlanId,
   primaEstimada: number,
@@ -39,10 +36,6 @@ export function construirEventoCotizacion(
   };
 }
 
-/**
- * Inicializa `window.dataLayer` de forma segura y envía el evento
- * `cotizacion_calculada` tras un cálculo válido.
- */
 export function registrarCotizacionCalculada(
   planSeleccionado: PlanId,
   primaEstimada: number,

@@ -106,30 +106,22 @@ const formateadorMilesCO = new Intl.NumberFormat('es-CO', {
   maximumFractionDigits: 0,
 });
 
-/**
- * Formatea un monto en pesos colombianos (COP) sin decimales.
- */
 export function formatearMonedaCOP(valor: number): string {
   return formateadorMonedaCOP.format(Math.round(valor));
 }
 
-/**
- * Formatea una entrada de texto con separador de miles (es-CO) mientras el usuario escribe.
- * Si contiene caracteres no numéricos (letras, signos negativos, comas), conserva el texto
- * original para que la validación muestre el mensaje de error correspondiente.
- */
 export function formatearEntradaMiles(entrada: string): string {
   const recortada = entrada.trim();
   if (recortada === '') {
     return '';
   }
 
+  // Si hay caracteres no numéricos, se conserva el texto para mostrar el error de validación
   const sinFormato = recortada.replace(/[$\s.]/g, '');
   if (sinFormato === '' || !/^\d+$/.test(sinFormato)) {
     return entrada;
   }
 
-  // Evitar pérdida de precisión visual si se pegan demasiados dígitos
   if (sinFormato.length > 15) {
     return sinFormato.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
   }
@@ -137,10 +129,6 @@ export function formatearEntradaMiles(entrada: string): string {
   return formateadorMilesCO.format(Number(sinFormato));
 }
 
-/**
- * Valida el valor comercial del vehículo (cadena ingresada por el usuario o número)
- * contra los límites permitidos ($20.000.000 a $300.000.000 COP).
- */
 export function validarValorComercial(
   entrada: string | number,
 ): ResultadoValidacionValor {
@@ -203,10 +191,7 @@ export function validarValorComercial(
   return { valido: true, valor: valorNumerico };
 }
 
-/**
- * Calcula la prima base anual redondeada al peso colombiano más cercano.
- * Fórmula: Math.round(valorComercial * 3% * factorAntiguedad).
- */
+// Redondeo al peso para evitar residuos de coma flotante
 export function calcularPrimaBase(
   valorComercial: number,
   antiguedad: AntiguedadId,
@@ -220,9 +205,6 @@ export function calcularPrimaBase(
   return Math.round(validacion.valor * TASA_BASE * factor);
 }
 
-/**
- * Devuelve la metadata de una opción de antigüedad a partir de su identificador.
- */
 export function obtenerOpcionAntiguedad(id: AntiguedadId): OpcionAntiguedad {
   const opcion = OPCIONES_ANTIGUEDAD.find((item) => item.id === id);
   if (!opcion) {
@@ -231,10 +213,6 @@ export function obtenerOpcionAntiguedad(id: AntiguedadId): OpcionAntiguedad {
   return opcion;
 }
 
-/**
- * Calcula las primas anuales del Plan Esencial (prima base × 1,00) y del
- * Plan Plus (prima base × 1,35), redondeando cada prima al peso con Math.round.
- */
 export function calcularPrimasPlanes(primaBase: number): PrimasPlanes {
   if (!Number.isFinite(primaBase) || primaBase < 0) {
     throw new Error(
@@ -248,18 +226,11 @@ export function calcularPrimasPlanes(primaBase: number): PrimasPlanes {
   };
 }
 
-/**
- * Calcula la diferencia anual entre Plan Plus y Plan Esencial (Plus − Esencial)
- * utilizando las primas ya redondeadas al peso.
- */
+// Diferencia sobre primas ya redondeadas para que coincida con lo mostrado en pantalla
 export function calcularDiferenciaAnual(primas: PrimasPlanes): number {
   return primas.plus - primas.esencial;
 }
 
-/**
- * Determina el plan recomendado, la diferencia anual (Plus − Esencial) usando
- * las primas ya redondeadas y el texto de recomendación.
- */
 export function obtenerRecomendacionPlan(
   necesitaReemplazo: boolean,
   primas: PrimasPlanes,
