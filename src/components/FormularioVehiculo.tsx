@@ -53,7 +53,7 @@ function TooltipInfo({ id, etiquetaAria, texto }: TooltipInfoProps) {
   return (
     <div
       ref={contenedorRef}
-      className="inline-flex items-center"
+      className="inline-flex items-center sm:relative"
       onMouseEnter={() => setAbierto(true)}
       onMouseLeave={() => setAbierto(false)}
     >
@@ -79,7 +79,7 @@ function TooltipInfo({ id, etiquetaAria, texto }: TooltipInfoProps) {
         role="tooltip"
         className={
           abierto
-            ? 'pointer-events-none absolute bottom-full left-0 z-20 mb-2 w-64 max-w-full rounded-lg bg-[#0B1A59] px-3 py-2 text-xs leading-relaxed font-normal text-white shadow-lg'
+            ? 'pointer-events-none absolute top-full left-0 z-30 mt-2 w-64 max-w-full rounded-lg bg-[#0B1A59] px-3 py-2 text-xs leading-relaxed font-normal text-white shadow-lg sm:top-1/2 sm:left-full sm:mt-0 sm:ml-2.5 sm:w-60 sm:max-w-none sm:-translate-y-1/2'
             : 'sr-only'
         }
       >
@@ -144,7 +144,7 @@ export function FormularioVehiculo({
       <form onSubmit={handleFormSubmit} noValidate className="mt-6 space-y-5">
         {/* Campo: Valor comercial */}
         <div>
-          <div className="relative flex items-center gap-1.5">
+          <div className="relative flex items-center gap-1.5 sm:static">
             <label
               htmlFor="valor-comercial"
               className="text-sm font-semibold text-slate-800"
@@ -198,7 +198,7 @@ export function FormularioVehiculo({
 
         {/* Selector: Antigüedad del vehículo */}
         <div>
-          <div className="relative flex items-center gap-1.5">
+          <div className="relative flex items-center gap-1.5 sm:static">
             <label
               htmlFor="antiguedad-vehiculo"
               className="text-sm font-semibold text-slate-800"
