@@ -5,23 +5,19 @@ import vehiculoImg from '../assets/vehiculo.png';
 export function EncabezadoHero() {
   return (
     <header className="relative overflow-hidden bg-gradient-to-b from-white via-[#F5F8FE] to-[#EEF4FC]">
-      {/* Panel diagonal del vehículo en escritorio: cruza desde el tope del header hasta detrás de la tarjeta 2 con degradado inferior */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-y-0 right-0 hidden w-[59%] overflow-hidden lg:block xl:w-[57%]"
         style={{ clipPath: 'polygon(20% 0, 100% 0, 100% 100%, 0% 100%)' }}
       >
-        {/* Fondo base cielo/montaña para suavizar bordes */}
         <div className="absolute inset-0 bg-[#DCE7F6]" />
 
-        {/* Imagen del vehículo encuadrada dentro del corte diagonal sin recortar el frente */}
         <img
           src={vehiculoImg}
           alt=""
           className="absolute inset-y-0 right-0 h-full w-[94%] max-w-none object-cover object-[center_45%]"
         />
 
-        {/* Fusión muy sutil en el borde izquierdo de la foto */}
         <div
           className="absolute inset-y-0 left-0 w-[14%]"
           style={{
@@ -30,7 +26,6 @@ export function EncabezadoHero() {
           }}
         />
 
-        {/* Tinte superior suave en la franja del header para que se vea el corte diagonal cruzando el encabezado */}
         <div
           className="absolute inset-x-0 top-0 h-20"
           style={{
@@ -39,7 +34,6 @@ export function EncabezadoHero() {
           }}
         />
 
-        {/* Degradado inferior que funde la foto detrás de "2. Compara nuestras coberturas" hacia el fondo #EEF4FC */}
         <div
           className="absolute inset-x-0 bottom-0 h-[46%]"
           style={{
@@ -49,7 +43,6 @@ export function EncabezadoHero() {
         />
       </div>
 
-      {/* Barra superior con logos de marca (transparente a la derecha en escritorio para que el corte diagonal cruce el header) */}
       <div className="relative z-10 border-b border-slate-200/60 bg-white/90 lg:border-b-slate-200/40 lg:bg-transparent lg:bg-gradient-to-r lg:from-white/95 lg:via-white/75 lg:via-45% lg:to-transparent">
         <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3 sm:gap-4 sm:px-6 lg:px-8">
           <img
@@ -76,7 +69,6 @@ export function EncabezadoHero() {
         </div>
       </div>
 
-      {/* Hero principal */}
       <div className="relative z-10 mx-auto grid max-w-6xl grid-cols-1 items-center gap-8 px-4 pt-8 pb-10 sm:px-6 lg:grid-cols-12 lg:gap-10 lg:px-8 lg:pt-12 lg:pb-48">
         <div className="lg:col-span-5">
           <span className="inline-block rounded-lg bg-[#E3ECFA] px-3.5 py-1.5 text-xs font-semibold tracking-wide text-[#17307A] sm:text-sm">
@@ -91,7 +83,6 @@ export function EncabezadoHero() {
           </p>
         </div>
 
-        {/* En móvil y tablet se conserva la tarjeta limpia de la imagen del vehículo */}
         <div className="lg:hidden">
           <img
             src={vehiculoImg}

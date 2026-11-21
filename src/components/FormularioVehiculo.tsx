@@ -142,7 +142,6 @@ export function FormularioVehiculo({
       </h2>
 
       <form onSubmit={handleFormSubmit} noValidate className="mt-6 space-y-5">
-        {/* Campo: Valor comercial */}
         <div>
           <div className="relative flex items-center gap-1.5 sm:static">
             <label
@@ -196,7 +195,6 @@ export function FormularioVehiculo({
           )}
         </div>
 
-        {/* Selector: Antigüedad del vehículo */}
         <div>
           <div className="relative flex items-center gap-1.5 sm:static">
             <label
@@ -249,7 +247,6 @@ export function FormularioVehiculo({
           </div>
         </div>
 
-        {/* Casilla: Vehículo de reemplazo */}
         <div className="pt-1">
           <label
             htmlFor="vehiculo-reemplazo"
@@ -269,7 +266,6 @@ export function FormularioVehiculo({
           </label>
         </div>
 
-        {/* Botón principal */}
         <button
           type="submit"
           className="inline-flex w-full cursor-pointer items-center justify-center gap-2.5 rounded-xl bg-[#0F2D9C] px-5 py-3.5 text-base font-semibold text-white shadow-sm transition hover:bg-[#0A227A] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0F2D9C] active:bg-[#081A61]"
