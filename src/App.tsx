@@ -60,7 +60,7 @@ export default function App() {
     <div className="flex min-h-screen flex-col bg-[#EEF4FC] text-slate-900">
       <EncabezadoHero />
 
-      <main className="relative z-10 mx-auto -mt-4 w-full max-w-6xl flex-1 px-4 sm:px-6 lg:-mt-6 lg:px-8">
+      <main className="relative z-10 mx-auto -mt-4 w-full max-w-6xl flex-1 px-4 sm:px-6 lg:-mt-36 lg:px-8">
         <div className="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <FormularioVehiculo
